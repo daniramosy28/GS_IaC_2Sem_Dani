@@ -1,20 +1,17 @@
-module "network" {
-    source               = "./modules/network"
+module "rede" {
+    source               = "./modules/rede"
     vpc_cidr             = "10.0.0.0/16"
     vpc_az1              = "${var.vpc_az1}"
-    vpc_az2              = "${var.vpc_az2}"
     vpc_sn_pub_az1_cidr  = "${var.vpc_sn_pub_az1_cidr}"
-    vpc_sn_pub_az2_cidr  = "${var.vpc_sn_pub_az2_cidr}"
     vpc_sn_priv_az1_cidr = "${var.vpc_sn_priv_az1_cidr}"
-    vpc_sn_priv_az2_cidr = "${var.vpc_sn_priv_az2_cidr}"
 }
 
 module "compute" {
     source                   = "./modules/compute"
-    ec2_GS_name              = "${var.ec2_GS_name}"
-    ec2_GS_ami               = "${var.ec2_GS_ami}"
-    ec2_GS_instance_type     = "${var.ec2_GS_instance_type}"
-    ec2_GS_ssh_key_name      = "${var.ec2_GS_ssh_key_name}"
+    ec2_gs_name              = "${var.ec2_gs_name}"
+    ec2_gs_ami               = "${var.ec2_gs_ami}"
+    ec2_gs_instance_type     = "${var.ec2_gs_instance_type}"
+    ec2_gs_ssh_key_name      = "${var.ec2_gs_ssh_key_name}"
     ec2_lb_name              = "${var.ec2_lb_name}"
     ec2_lb_tg_name           = "${var.ec2_lb_tg_name}"
     ec2_asg_name             = "${var.ec2_asg_name}"
@@ -22,8 +19,8 @@ module "compute" {
     ec2_asg_min_size         = "${var.ec2_asg_min_size}"
     ec2_asg_max_size         = "${var.ec2_asg_max_size}"
     vpc_cidr                 = "${var.vpc_cidr}"
-    vpc_id                   = "${module.network.vpc_id}"
-    vpc_sn_pub_az1_id        = "${module.network.vpc_sn_pub_az1_id}"
-    vpc_sn_pub_az2_id        = "${module.network.vpc_sn_pub_az2_id}"
-    vpc_sg_pub_id            = "${module.network.vpc_sg_pub_id}"
+    vpc_id                   = "${modules.rede.vpc_id}"
+    vpc_sn_pub_az1_id        = "${modules.rede.vpc_sn_pub_az1_id}"
+    vpc_sn_pub_az2_id        = "${modules.rede.vpc_sn_pub_az2_id}"
+    vpc_sg_pub_id            = "${modules.rede.vpc_sg_pub_id}"
 }

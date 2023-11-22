@@ -101,7 +101,7 @@ resource "azurerm_virtual_machine" "vm" {
 
 }
 
-resource "azurerm_virtual_machine" "vm" {
+resource "azurerm_virtual_machine" "vm2" {
   name                             = "staticsite-vm2"
   location                         = "${var.location}"
   resource_group_name              = "${var.rg_name}"

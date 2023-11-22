@@ -1,6 +1,6 @@
 variable "rg_name" {
     type    = string
-    default = "rg-staticsite-vm-dn"
+    default = "rg-staticsite-dani"
 }
 
 variable "location" {
