@@ -14,8 +14,8 @@ terraform {
     # }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-gs-iac-dani"
-    storage_account_name = "rsiacdani"
+    resource_group_name  = "danigs2sem"
+    storage_account_name = "rsgsdani"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }

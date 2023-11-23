@@ -19,8 +19,8 @@ module "compute" {
     ec2_asg_min_size         = "${var.ec2_asg_min_size}"
     ec2_asg_max_size         = "${var.ec2_asg_max_size}"
     vpc_cidr                 = "${var.vpc_cidr}"
-    vpc_id                   = "${modules.rede.vpc_id}"
-    vpc_sn_pub_az1_id        = "${modules.rede.vpc_sn_pub_az1_id}"
-    vpc_sn_pub_az2_id        = "${modules.rede.vpc_sn_pub_az2_id}"
-    vpc_sg_pub_id            = "${modules.rede.vpc_sg_pub_id}"
+    vpc_id                   = "${module.rede.vpc_id}"
+    vpc_sn_pub_az1_id        = "${module.rede.vpc_sn_pub_az1_id}"
+    vpc_sn_pub_az2_id        = "${module.rede.vpc_sn_pub_az2_id}"
+    vpc_sg_pub_id            = "${module.rede.vpc_sg_pub_id}"
 }
