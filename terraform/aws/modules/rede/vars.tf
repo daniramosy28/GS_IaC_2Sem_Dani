@@ -1,6 +1,6 @@
 variable "vpc_cidr" {
     type    = string
-    default = "20.0.0.0/16"
+    default = "20.0.0.0/8"
 }
 
 variable "vpc_az1" {
@@ -25,12 +25,12 @@ variable "vpc_dns_hostnames" {
 
 variable "vpc_sn_pub_az1_cidr" {
     type    = string
-    default = "20.0.1.0/24"
+    default = "20.0.1.0/16"
 }
 
 variable "vpc_sn_pub_az2_cidr" {
     type    = string
-    default = "20.0.2.0/24"
+    default = "20.0.2.0/16"
 }
 
 variable "vpc_sn_pub_map_public_ip_on_launch" {
@@ -40,12 +40,12 @@ variable "vpc_sn_pub_map_public_ip_on_launch" {
 
 variable "vpc_sn_priv_az1_cidr" {
     type    = string
-    default = "20.0.3.0/24"
+    default = "20.0.3.0/16"
 }
 
 variable "vpc_sn_priv_az2_cidr" {
     type    = string
-    default = "20.0.4.0/24"
+    default = "20.0.4.0/16"
 }
 
 

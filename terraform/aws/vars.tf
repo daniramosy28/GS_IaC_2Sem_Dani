@@ -1,6 +1,6 @@
 variable "vpc_cidr" {
     type    = string
-    default = "10.0.0.0/16"
+    default = "10.0.0.0/8"
 }
 
 variable "vpc_az1" {
@@ -15,27 +15,27 @@ variable "vpc_az2" {
 
 variable "vpc_sn_pub_az1_cidr" {
     type    = string
-    default = "10.0.1.0/24"
+    default = "10.0.1.0/16"
 }
 
 variable "vpc_sn_pub_az2_cidr" {
     type    = string
-    default = "10.0.2.0/24"
+    default = "10.0.2.0/16"
 }
 
 variable "vpc_sn_priv_az1_cidr" {
     type    = string
-    default = "10.0.3.0/24"
+    default = "10.0.3.0/16"
 }
 
 variable "vpc_sn_priv_az2_cidr" {
     type    = string
-    default = "10.0.4.0/24"
+    default = "10.0.4.0/16"
 }
 
 variable "ec2_gs_name" {
     type    = string
-    default = "ec2-desafio-notifier"
+    default = "ec2-gs-notifier"
 }
 
 variable "ec2_gs_ami" {
