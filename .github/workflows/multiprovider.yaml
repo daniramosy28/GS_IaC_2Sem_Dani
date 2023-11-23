@@ -1,4 +1,4 @@
-name: Terraform GS Daniele 98629
+name: Terraform GS 
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
       run : terraform -chdir=./terraform/aws validate
 
     - name: Step 10 - Terraform Plan
-      run : terraform -chdir=./terraform/aws plan -input=false -out tfplan
+      run : terraform -chdir=./terraform/aws plan -input=false -out tfplan -lock=false
       #run : terraform -chdir=./terraform/aws plan -input=false -destroy -out tfplan
 
     - name: Step 11 - Terraform Apply
