@@ -1,4 +1,4 @@
-data "template_file" "cloud_init" {
+data "template_file" "cloud.init" {
     template = "${file("./modules/compute/init/cloud.init.sh")}"
 }
 
