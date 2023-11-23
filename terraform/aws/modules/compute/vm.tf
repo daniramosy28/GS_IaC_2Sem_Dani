@@ -1,5 +1,5 @@
-data "template_file" "cloud.init" {
-    template = "${file("./modules/compute/init/cloud.init.sh")}"
+data "template_file" "cloud_init" {
+    template = "${file("./modules/compute/init/cloud_init.sh")}"
 }
 
 resource "aws_launch_template" "ec2_lt" {
@@ -7,7 +7,7 @@ resource "aws_launch_template" "ec2_lt" {
     image_id               = "${var.ec2_gs_ami}"
     instance_type          = "${var.ec2_gs_instance_type}"
     key_name               = "${var.ec2_gs_ssh_key_name}"
-    user_data              = "${base64encode(data.template_file.cloud.init.rendered)}"
+    user_data              = "${base64encode(data.template_file.cloud_init.rendered)}"
     vpc_security_group_ids = ["${var.vpc_sg_pub_id}"]
 }
 
