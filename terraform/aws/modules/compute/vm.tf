@@ -1,5 +1,5 @@
 data "template_file" "cloud_init" {
-    template = "${file("./modules/compute/init/cloud_init.sh")}"
+    template = "${file("./modules/compute/init/cloud.init.sh")}"
 }
 
 resource "aws_launch_template" "ec2_lt" {
