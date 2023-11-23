@@ -1,3 +1,7 @@
+data "template_file" "cloud_init" {
+    template = "${file("./modules/compute/init/cloud_init.sh")}"
+}
+
 resource "aws_launch_template" "ec2_lt" {
     name                   = "${var.ec2_gs_name}"
     image_id               = "${var.ec2_gs_ami}"
